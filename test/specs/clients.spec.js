@@ -28,6 +28,7 @@ describe('Clients Suit', ()=> {
 
         const middlenameField = await $('input[formcontrolname="userMiddleName"]');
         await middlenameField.setValue('BLACKOVNA');
+        expect(middlenameField).toHaveText('BLACKOVNA')
 
         const maleOptionRadio = await $('mat-radio-group mat-radio-button:nth-child(1) div[class="mat-radio-label-content"]');
         await maleOptionRadio.click();
@@ -70,9 +71,10 @@ describe('Clients Suit', ()=> {
         const childrenFormSaveButton = await $('.mat-dialog-actions .mat-raised-button:nth-child(2)');
         childrenFormSaveButton.click();
 
-        // const saveButton = await $('button[name="save"]');
-        // // await saveButton.click();
+        const saveButton = await $('button[name="save"]');
+        // await saveButton.click();
         await browser.pause(15000);
     })
 
+    
 })
