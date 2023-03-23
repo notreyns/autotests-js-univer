@@ -11,24 +11,24 @@ describe('Clients Suit', ()=> {
     })
 
     it('Create full client', async ()=> {
-        // здесь идет создание клиента
+        //press add client button
         await $('button.clients-add-user-dialog').click();
         await browser.pause(1000);
 
-        // проверка что форма регистрации клиента открылась
+        //check is next screen with userForm opened
         const userForm = await $('div.add-user-modal form');
         await expect(userForm).toExist();
 
-        // далее в поля формы ввожу данные
+        //entering the required inputs
         const surnameField = await $('input[formcontrolname="userSurname"]');
-        await surnameField.setValue('Black');
+        await surnameField.setValue('Potter');
 
         const firstnameField = await $('input[formcontrolname="userName"]');
-        await firstnameField.setValue('Bellatrix');
+        await firstnameField.setValue('Harry');
 
         const middlenameField = await $('input[formcontrolname="userMiddleName"]');
-        await middlenameField.setValue('BLACKOVNA');
-        expect(middlenameField).toHaveText('BLACKOVNA')
+        await middlenameField.setValue('James');
+        expect(middlenameField).toHaveText('James')
 
         const maleOptionRadio = await $('mat-radio-group mat-radio-button:nth-child(1) div[class="mat-radio-label-content"]');
         await maleOptionRadio.click();
@@ -39,16 +39,20 @@ describe('Clients Suit', ()=> {
         const phoneNumberField = await $('input[formcontrolname="phone"]');
         await phoneNumberField.setValue('996777123123');
 
+        //open the dropdown
         const professionSelect = await $('.mat-select-value');
         professionSelect.click();
         await browser.pause(1000);
 
+        //click on the second row in the professions list
         const professionOption = await $('#mat-option-2');
         professionOption.click();
 
+        //set birthday
         const datebirthField = await $('input[formcontrolname="birthday"]');
         await datebirthField.setValue('02.12.2000');
 
+        //click on the children icon to open form for adding child's info
         const childrenIcon = await $('.add-user-children__controller-icon');
         await childrenIcon.click();
 
@@ -68,11 +72,13 @@ describe('Clients Suit', ()=> {
         childrenMaleGender.click();
         await browser.pause(1000);
 
+        //save child and close the modal window
         const childrenFormSaveButton = await $('.mat-dialog-actions .mat-raised-button:nth-child(2)');
         childrenFormSaveButton.click();
 
+        //create the client by pressing save button
         const saveButton = await $('button[name="save"]');
-        // await saveButton.click();
+        await saveButton.click();
         await browser.pause(15000);
     })
 

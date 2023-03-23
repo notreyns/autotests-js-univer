@@ -14,7 +14,9 @@
   "scripts": {
     "wdio": "wdio run wdio.conf.js",
     "login": "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/login.spec.js",
-    "clients": "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/clients.spec.js"
+    "clients": "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/clients.spec.js",
+    "edit" : "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/edit_client.spec.js",
+    "view": "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/view.spec.js"
   },
   "dependencies": {
     "geckodriver": "^3.2.0",
