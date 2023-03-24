@@ -14,9 +14,11 @@
   "scripts": {
     "wdio": "wdio run wdio.conf.js",
     "login": "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/login.spec.js",
-    "clients": "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/clients.spec.js",
+    "unique": "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/client_fully.spec.js",
     "edit" : "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/edit_client.spec.js",
-    "view": "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/view.spec.js"
+    "view": "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/view.spec.js",
+    "create": "./node_modules/.bin/wdio ./wdio.conf.js --spec ./test/specs/client_basic.spec.js"
+
   },
   "dependencies": {
     "geckodriver": "^3.2.0",

@@ -13,10 +13,12 @@ describe('Clients Suit', ()=> {
     it('Edit Client', async ()=> {
         await browser.pause(3000);
     
+        //click on the first client in the list
         const firstClient = await $('.crm-navigator-table__row:nth-child(1) td');
         firstClient.click();
         await browser.pause(2000);
     
+        //edit the surname
         const surnameInput = await $('#mat-input-1');
         surnameInput.click();
         await browser.pause(1000);
@@ -24,6 +26,7 @@ describe('Clients Suit', ()=> {
         await surnameInput.setValue('John');
         await browser.pause(1000);
     
+        //edit the name
         const nameInput = await $('#mat-input-2');
         nameInput.click();
         await browser.pause(1000);
