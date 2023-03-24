@@ -1,4 +1,4 @@
-const LoginPage = require("../pageobjects/loginPage");
+const LoginPage = require("../pageobjects/login.page");
 
 describe("Login to Navigator", ()=>{
     beforeEach( async ()=> {

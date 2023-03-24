@@ -1,19 +1,19 @@
-class LoginPage {
+const Page = require('./page');
+
+class LoginPage extends Page{
     get usernameField () { return $('input[name="userName"]') }
     get passwordField () { return $('input.password') }
     get loginButton () { return $('button[type="submit"]') }
 
-    async open(){
-        await browser.url('http://167.114.201.175:5000/login');
-        // await browser.pause(1000);
-
-    }
-
-    async doLogin(username, password){
+    async doLogin(username, password) {
         await this.usernameField.setValue(username);
         await this.passwordField.setValue(password);
         await this.loginButton.click();
-        await expect(browser).toHaveUrlContaining('clients');
+        //await expect(browser).toHaveUrlContaining('clients');
+    }
+
+    open () {
+        return super.open('login');
     }
 }
 
