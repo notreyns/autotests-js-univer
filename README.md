@@ -4,7 +4,7 @@
 
 ### Prerequisites: install all dependencies
 
-Autotest Name | Commant
+Autotest Name | Command
 ------------- | -------------
 Login  | yarn run login
 Create Client  | yarn run create
