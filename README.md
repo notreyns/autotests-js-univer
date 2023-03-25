@@ -4,7 +4,8 @@
 
 ### Prerequisites: install all dependencies
 
-Autotest Name | Command
+### List of automated test cases and their command to run
+*Autotest Name | Command*
 ------------- | -------------
 Login  | yarn run login
 Create Client  | yarn run create
