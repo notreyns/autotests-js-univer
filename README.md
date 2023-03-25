@@ -11,3 +11,5 @@ Create Client  | yarn run create
 View client | yarn run view
 Edit client | yarn run edit
 Unique(fill user form fully) | yarn run unique
+
+All tests | npm run wdio
